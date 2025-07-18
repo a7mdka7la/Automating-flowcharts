@@ -1,0 +1,12 @@
+version: '1'
+services:
+  - type: web
+    name: storyboard-generator
+    env: docker
+    dockerImageUrl: ahmedkahla/storyboard-generator:latest
+    plan: free
+    numInstances: 1
+    envVars:
+      - key: PORT
+        value: 8501
+    healthCheckPath: /_stcore/health
